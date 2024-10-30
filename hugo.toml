@@ -33,7 +33,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 
     # Links to your socials.  Comment or delete any you don't need/use. 
     
-    email_url = "mailto://jobs.syntaxer@gmail.com"
+    email_url = "mailto:jobs.syntaxer@gmail.com"
     github_url = "https://github.com/synt4xer"
     instagram_url = "https://instagram.com/syntaxer_"
     linkedin_url = "https://linkedin.com/in/ferreljf"
