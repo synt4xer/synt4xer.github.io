@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = 'My New Hugo Site'
+title = "Ferrel John Fernando"
 theme = "poison"
 paginate = 10
 pluralizelisttitles = false   # removes the automatically appended "s" on sidebar entries
@@ -10,11 +10,11 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 
 [params]
     brand = "Ferrel John Fernando"                           # name of your site - appears in the sidebar
-    # remote_brand_image = 'https://github.com/synt4xer.png' # path to a remote file
-    # brand_image = "/images/test.jpg"                       # path to the image shown in the sidebar
-    description = "Update this description..."               # Used as default meta description if not specified in front matter
+    # remote_brand_image = 'https://github.com/USERNAME.png' # path to a remote file
+    brand_image = "/images/profile.jpeg"                       # path to the image shown in the sidebar
+    description = "Software Engineer"                        # Used as default meta description if not specified in front matter
     dark_mode = false                                        # optional - defaults to false
-    # favicon = "favicon.png"                                # path to favicon (defaults to favicon.png)
+    favicon = "favicon.ico"                                  # path to favicon (defaults to favicon.png)
 
     front_page_content = ["posts"] # Equivalent to the default value, add page bundle names to include them on the front page.
 
@@ -32,12 +32,13 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     ]
 
     # Links to your socials.  Comment or delete any you don't need/use. 
-    discord_url = "https://discord.com"
-    email_url = "mailto://user@domain"
-    github_url = "https://github.com"
-    instagram_url = "https://instagram.com"
-    linkedin_url = "https://linkedin.com"
-    telegram_url = "https://telegram.org"
+    
+    email_url = "mailto://jobs.syntaxer@gmail.com"
+    github_url = "https://github.com/synt4xer"
+    instagram_url = "https://instagram.com/syntaxer_"
+    linkedin_url = "https://linkedin.com/in/ferreljf"
+    telegram_url = "https://t.me/iferrelant"
+    #discord_url = "https://discord.com"
     # facebook_url = "https://facebook.com"
     # flickr_url = "https://flickr.com"
     # gitlab_url = "https://gitlab.com"
