@@ -19,18 +19,20 @@ I'm a backend engineer with a focus on Node.js and Go. For Node.js, I'd love to 
 ### My approach
 
 1. **Crafting Code with Care**
+
    I believe that great code isn’t just about making things work—it’s about building solutions that are clean, scalable, and maintainable. Every line should add value, and every feature should serve a purpose. This mindset pushes me to not only solve problems but to solve them with a focus on quality and longevity.
 
 2. **Embracing Lifelong Learning**
+
    Tech is always evolving, and I am passionate about evolving with it. Learning fuels my curiosity and keeps my skills sharp, whether it’s diving into a new framework, language, or tool. For me, each new challenge is an opportunity to grow and discover new ways to make an impact.
 
 3. **User-Centric Development**
+
    Behind every piece of software is a person using it. I strive to build solutions that enhance user experiences, not just from a functional standpoint but also by focusing on usability, speed, and seamlessness. My goal is to ensure that my work has a positive, lasting effect on those who use it.
 
 4. **Building with Integrity**
-   Coding is a craft, and I am committed to upholding high standards of integrity and professionalism in every project. This means writing testable, dependable code, collaborating effectively, and always being mindful of best practices.
 
-<!-- I believe in the power of collaboration and continuous learning. I thrive in environments that encourage creativity and innovation, where I can contribute my skills and learn from others. I'm always looking for new opportunities to grow and take on exciting challenges. -->
+   Coding is a craft, and I am committed to upholding high standards of integrity and professionalism in every project. This means writing testable, dependable code, collaborating effectively, and always being mindful of best practices.
 
 ### Let's Connect
 
