@@ -15,6 +15,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     description = "Software Engineer"                        # Used as default meta description if not specified in front matter
     dark_mode = false                                        # optional - defaults to false
     favicon = "favicon.ico"                                  # path to favicon (defaults to favicon.png)
+    hideToc = true
 
     front_page_content = ["posts"] # Equivalent to the default value, add page bundle names to include them on the front page.
 
@@ -25,10 +26,10 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
         # HasChildren:  If the directory's files should be listed.  Default is true.
         # Limit:        If the files should be listed, how many should be shown.
     menu = [
-        {Name = "About", URL = "/about/", HasChildren = false},
         {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
         {Name = "Tags", URL = "/tags/", HasChildren = false},
-        {Name = 'Resume', URL = "/resume/", HasChildren = false},
+        {Name = "Resume", URL = "/resume", HasChildren = false},
+        {Name = "About", URL = "/about", HasChildren = false},
     ]
 
     # Links to your socials.  Comment or delete any you don't need/use. 
@@ -38,7 +39,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
     instagram_url = "https://instagram.com/syntaxer_"
     linkedin_url = "https://linkedin.com/in/ferreljf"
     telegram_url = "https://t.me/iferrelant"
-    #discord_url = "https://discord.com"
+    # discord_url = "https://discord.com"
     # facebook_url = "https://facebook.com"
     # flickr_url = "https://flickr.com"
     # gitlab_url = "https://gitlab.com"
@@ -54,28 +55,19 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
 
     # NOTE: If you don't want to use RSS, comment or delete the following lines
     # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
-    rss_icon = true
+    # rss_icon = true
     # Which section the RSS icon links to, defaults to all content. See https://gohugo.io/templates/rss/#section-rss
-    rss_section = "posts"
+    # rss_section = "posts"
 
     # Hex colors for your sidebar.
-    # moon_sun_background_color = "#515151"   # default is #515151
-    # moon_sun_color = "#FFF"                 # default is #FFF
-    # sidebar_a_color = "#FFF"                # default is #FFF
-    # sidebar_bg_color = "#202020"            # default is #202020
-    # sidebar_h1_color = "#FFF"               # default is #FFF
-    # sidebar_img_border_color = "#515151"    # default is #515151
-    # sidebar_p_color = "#909090"             # default is #909090
-    # sidebar_socials_color = "#FFF"          # default is #FFF
-
-    moon_sun_background_color = "#FFD700"    # Vibrant gold
-    moon_sun_color = "#000000"              # Pure black for maximum contrast
-    sidebar_a_color = "#000000"             # Black for clear link visibility
-    sidebar_bg_color = "#FFBF00"            # Rich amber yellow background
-    sidebar_h1_color = "#000000"            # Black headers for strong contrast
-    sidebar_img_border_color = "#FFD700"    # Gold borders
-    sidebar_p_color = "#1A1A1A"             # Very dark gray for readable text
-    sidebar_socials_color = "#000000"       # Black social icons
+    moon_sun_background_color = "#FFD700"   # Vibrant gold, default is #515151
+    moon_sun_color = "#000000"              # Pure black for maximum contrast, default is #FFF
+    sidebar_a_color = "#000000"             # Black for clear link visibility, default is #FFF
+    sidebar_bg_color = "#FFBF00"            # Rich amber yellow background, default is #202020
+    sidebar_h1_color = "#000000"            # Black headers for strong contrast, default is #FFF
+    sidebar_img_border_color = "#FFD700"    # Gold borders, default is #515151
+    sidebar_p_color = "#1A1A1A"             # Very dark gray for readable text, default is #909090
+    sidebar_socials_color = "#000000"       # Black social icons, default is #FFF
 
 
     # Hex colors for your content in light mode.
