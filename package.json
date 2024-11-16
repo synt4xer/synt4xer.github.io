@@ -1,0 +1,16 @@
+{
+  "name": "synt4xer.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/synt4xer/synt4xer.github.io.git",
+  "author": "Ferrel John Fernando <f.syntaxer@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.16.13"
+  }
+}
