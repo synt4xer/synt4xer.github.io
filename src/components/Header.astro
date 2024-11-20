@@ -1,6 +1,5 @@
 ---
 const navItems = [
-  { href: "/", text: "Home" },
   { href: "/posts", text: "Posts" },
   { href: "/categories", text: "Categories" },
   { href: "/series", text: "Series" },
@@ -8,9 +7,11 @@ const navItems = [
 ];
 ---
 
-<header class="border-b border-gray-200 dark:border-gray-700">
+<header class="border-b border-gray-200 dark:border-primary-dark/20">
   <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <a href="/" class="text-xl font-bold">Blog</a>
+    <a href="/" class="text-xl font-bold">
+      <img src="/images/logo-50x50.svg" alt="Logo" class="w-10 h-10" />
+    </a>
 
     <div class="flex items-center gap-6">
       <div class="hidden md:flex items-center gap-6">
@@ -84,7 +85,7 @@ const navItems = [
   </nav>
 
   <div id="mobile-menu" class="hidden md:hidden">
-    <div class="px-4 py-3 space-y-3">
+    <div class="px-4 py-3 space-y-3 text-center">
       {
         navItems.map((item) => (
           <a

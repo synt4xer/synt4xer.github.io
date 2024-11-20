@@ -1,8 +1,8 @@
 ---
-import '@fontsource-variable/inter';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import ThemeScript from '../components/ThemeScript.astro';
+import "@fontsource-variable/inter";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ThemeScript from "../components/ThemeScript.astro";
 
 interface Props {
   title: string;
@@ -10,10 +10,10 @@ interface Props {
   image?: string;
 }
 
-const { 
-  title, 
-  description = "A personal blog built with Astro",
-  image = "/social-image.png"
+const {
+  title,
+  description = "Hi, I'm Ferrel John Fernando, a passionate software engineer specializing in backend development with Node.js and Go. Explore my journey, projects, and insights into the world of software engineering.",
+  image = "/social-image.png",
 } = Astro.props;
 ---
 
@@ -24,7 +24,7 @@ const {
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -33,10 +33,12 @@ const {
     <meta property="og:image" content={image} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    
+
     <ThemeScript />
   </head>
-  <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark min-h-screen flex flex-col">
+  <body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark min-h-screen flex flex-col"
+  >
     <Header />
     <main class="flex-grow container mx-auto px-4 py-8">
       <slot />
@@ -51,7 +53,7 @@ const {
     --accent-light: 224, 204, 250;
     --accent-dark: 49, 10, 101;
   }
-  
+
   * {
     margin: 0;
     padding: 0;
@@ -59,6 +61,6 @@ const {
   }
 
   body {
-    font-family: 'Inter Variable', sans-serif;
+    font-family: "Inter Variable", sans-serif;
   }
 </style>
