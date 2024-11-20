@@ -9,12 +9,12 @@ export default {
         },
         colors: {
           primary: {
-            light: '#2563eb',
-            dark: '#60a5fa',
+            light: '#eb8723',
+            dark: '#ed8e2f',
           },
           background: {
             light: '#ffffff',
-            dark: '#111827',
+            dark: '#1d1e21',
           },
           text: {
             light: '#1f2937',
