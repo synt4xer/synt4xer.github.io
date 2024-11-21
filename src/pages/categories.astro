@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+const categories = [...new Set(posts.map((post) => post.data.category))];
+
+const postsByCategory = categories.map((category) => ({
+  name: category,
+  posts: posts.filter((post) => post.data.category === category),
+}));
+---
+
+<Layout title="Categories">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Categories</h1>
+
+    <div class="space-y-12">
+      {
+        postsByCategory.map(({ name, posts }) => (
+          <section>
+            <h2 class="text-2xl font-bold mb-4">{name}</h2>
+            <div class="space-y-4">
+              {posts.map((post) => (
+                <a href={`/posts/${post.slug}`}>
+                  <article class="bg-card-light dark:bg-card-dark p-6 rounded-lg hover:ring-2 hover:ring-primary-light/60 dark:hover:ring-primary-dark/60 transition">
+                    <h3 class="text-2xl font-bold mb-2">{post.data.title}</h3>
+                    <time class="text-gray-600 dark:text-primary-dark text-sm">
+                      {post.data.pubDate.toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </article>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
