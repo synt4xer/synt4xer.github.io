@@ -8,7 +8,9 @@ const navItems = [
 ---
 
 <header class="border-b border-gray-200 dark:border-primary-dark/20">
-  <nav class="container px-40 py-4 mx-auto flex justify-between items-center">
+  <nav
+    class="container mx-auto max-w-5xl px-4 sm:px-6 md:px-8 py-4 flex justify-between items-center"
+  >
     <a href="/" class="text-xl font-bold" aria-label="Home">
       <img src="/images/logo-50x50.svg" alt="Logo" class="w-10 h-10" />
     </a>
@@ -19,7 +21,14 @@ const navItems = [
           navItems.map((item) => (
             <a
               href={item.href}
-              class="hover:text-primary-light dark:hover:text-primary-dark transition-colors"
+              class:list={[
+                "transition-colors",
+                "hover:text-primary-light dark:hover:text-primary-dark",
+                {
+                  "text-primary-light dark:text-primary-dark":
+                    Astro.url.pathname === item.href,
+                },
+              ]}
             >
               {item.text}
             </a>
@@ -29,12 +38,12 @@ const navItems = [
 
       <button
         id="theme-toggle"
-        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-primary-dark transition-colors"
         aria-label="Toggle theme"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 hidden dark:block"
+          class="h-5 w-5 hidden dark:block hover:text-primary-dark transition-colors"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -48,7 +57,7 @@ const navItems = [
         </svg>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 block dark:hidden"
+          class="h-5 w-5 block dark:hidden hover:text-primary-light transition-colors"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
