@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const experience = [
+  {
+    company: "GUE Ecosystem",
+    position: "Software Engineer",
+    period: "Mar 2023 - Present",
+  },
+  {
+    company: "Flash Coffee",
+    position: "Software Engineer II",
+    period: "Jan 2022 - Nov 2022",
+  },
+  {
+    company: "LoveID",
+    position: "Software Engineer",
+    period: "Mar 2020 - Dec 2021",
+  },
+  {
+    company: "SisApp",
+    position: "Junior Software Engineer",
+    period: "Jun 2017 - Nov 2019",
+  },
+];
+---
+
+<Layout title="About Me">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">About Me</h1>
+
+    <div class="prose dark:prose-invert max-w-none">
+      <p class="text-base">
+        Hello! I'm <a
+          href="https://www.linkedin.com/in/ferreljf/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary-light dark:text-primary-dark hover:underline"
+          >Ferrel John Fernando</a
+        >, a lifelong learner, passionate software engineer with a keen eye for
+        web development and a dedication to building innovative, impactful
+        solutions. I specialize in web development and enjoy working with modern
+        technologies to build efficient and user-friendly applications.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Professional Journey</h2>
+      <div class="space-y-4">
+        {
+          experience.map(({ company, position, period }) => (
+            <div class="bg-card-light dark:bg-card-dark p-4 rounded-lg hover:ring-2 hover:ring-primary-light/60 dark:hover:ring-primary-dark/60 transition">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h3 class="font-bold text-lg text-primary-light dark:text-primary-dark">
+                    {company}
+                  </h3>
+                  <p class="text-base">{position}</p>
+                </div>
+                <span class="text-sm text-gray-600 dark:text-gray-400 mt-1 sm:mt-0">
+                  {period}
+                </span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- <h2 class="text-2xl font-bold mt-8 mb-4 text-2xl">What I Do</h2>
+      <p class="text-base">
+        I currently work as a software engineer, focusing on building
+        scalable web applications. In my free time, I contribute to open-source
+        projects and write technical articles to share my knowledge with the
+        community.
+      </p> -->
+
+      <h2 class="text-2xl font-bold mt-8 mb-4 text-2xl">Get in Touch</h2>
+      <p class="text-base">
+        Feel free to reach out to me through any of the social media links on
+        the home page. I'm always interested in connecting with fellow
+        developers and discussing new opportunities.
+      </p>
+    </div>
+  </div>
+</Layout>
