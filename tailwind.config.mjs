@@ -19,7 +19,11 @@ export default {
           text: {
             light: '#1f2937',
             dark: '#f9fafb',
-          }
+          },
+          card: {
+            light: '#dcdde3',
+            dark: '#313238',
+          },
         },
       },
     },
