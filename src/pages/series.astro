@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+const series = [
+  ...new Set(posts.map((post) => post.data.series).filter(Boolean)),
+];
+
+const postsBySeries = series.map((seriesName) => ({
+  name: seriesName,
+  posts: posts
+    .filter((post) => post.data.series === seriesName)
+    .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()),
+}));
+---
+
+<Layout title="Series">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Series</h1>
+
+    <div class="space-y-12">
+      {
+        postsBySeries.map(({ name, posts }) => (
+          <section>
+            <h2 class="text-2xl font-bold mb-4">{name}</h2>
+            <div class="space-y-4">
+              {posts.map((post, index) => (
+                <a href={`/posts/${post.slug}`}>
+                  <article class="bg-card-light dark:bg-card-dark p-6 rounded-lg hover:ring-2 hover:ring-primary-light/60 dark:hover:ring-primary-dark/60 transition">
+                    <div class="flex items-center gap-4">
+                      <span class="text-2xl font-bold text-gray-400 dark:text-primary-dark/40">
+                        {(index + 1).toString().padStart(2, "0")}
+                      </span>
+                      <div>
+                        <h3 class="text-2xl font-bold mb-2">
+                          {post.data.title}
+                        </h3>
+                        <time class="text-gray-600 dark:text-primary-dark text-sm">
+                          {post.data.pubDate.toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                        </time>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
