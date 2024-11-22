@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://your-domain.com',
+  site: 'https://synt4xer.github.io',
   integrations: [
     tailwind(),
     sitemap(),
