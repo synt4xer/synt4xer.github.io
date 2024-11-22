@@ -22,7 +22,7 @@ const sortedPosts = posts
           <a href={`/posts/${post.slug}`}>
             <article class="bg-card-light dark:bg-card-dark p-6 rounded-lg hover:ring-2 hover:ring-primary-light/60 dark:hover:ring-primary-dark/60 transition">
               <h2 class="text-2xl font-bold mb-2">{post.data.title}</h2>
-              <div class="flex gap-4 text-gray-600 dark:text-primary-dark text-sm mb-2">
+              <div class="flex flex-wrap gap-x-4 gap-y-1 text-gray-600 dark:text-primary-dark text-sm mb-2">
                 <time datetime={post.data.pubDate.toISOString()}>
                   {post.data.pubDate.toLocaleDateString("en-US", {
                     year: "numeric",
@@ -30,9 +30,20 @@ const sortedPosts = posts
                     day: "numeric",
                   })}
                 </time>
-                <span>• {post.data.category}</span>
-                {post.data.series && <span>• Series: {post.data.series}</span>}
-                <span>• {post.readingTime} min read</span>
+                <div class="flex items-center">
+                  <span class="hidden sm:inline">•</span>
+                  <span class="sm:ml-2">{post.data.category}</span>
+                </div>
+                {post.data.series && (
+                  <div class="flex items-center">
+                    <span class="hidden sm:inline">•</span>
+                    <span class="sm:ml-2">Series: {post.data.series}</span>
+                  </div>
+                )}
+                <div class="flex items-center">
+                  <span class="hidden sm:inline">•</span>
+                  <span class="sm:ml-2">{post.readingTime} min read</span>
+                </div>
               </div>
               <p class="text-base">{post.data.description}</p>
             </article>
