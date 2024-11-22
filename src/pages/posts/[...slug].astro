@@ -18,16 +18,18 @@ const readingTime = calculateReadingTime(entry.body);
 
 <Layout title={entry.data.title}>
   <article class="prose dark:prose-invert max-w-3xl mx-auto">
-    {entry.data.headerImage && (
-      <div class="mb-8">
-        <img
-          src={entry.data.headerImage}
-          alt={entry.data.title}
-          class="w-full h-[400px] object-cover rounded-lg"
-        />
-      </div>
-    )}
-    
+    {
+      entry.data.headerImage && (
+        <div class="mb-8">
+          <img
+            src={entry.data.headerImage}
+            alt={entry.data.title}
+            class="w-full h-[400px] object-cover rounded-lg"
+          />
+        </div>
+      )
+    }
+
     <div class="flex items-center gap-4 mb-6">
       <img
         src="/images/profile.jpg"
@@ -38,25 +40,27 @@ const readingTime = calculateReadingTime(entry.body);
         <div class="font-medium">{entry.data.author}</div>
         <div class="text-sm text-gray-600 dark:text-gray-400">
           <time datetime={entry.data.pubDate.toISOString()}>
-            {entry.data.pubDate.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
+            {
+              entry.data.pubDate.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }
           </time>
-          {readingTime && (
-            <span class="ml-2">· {readingTime} min read</span>
-          )}
+          {readingTime && <span class="ml-2">· {readingTime} min read</span>}
         </div>
       </div>
     </div>
 
     <h1 class="text-4xl font-bold mb-4 leading-tight">{entry.data.title}</h1>
-    {entry.data.description && (
-      <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
-        {entry.data.description}
-      </p>
-    )}
+    {
+      entry.data.description && (
+        <p class="text-md text-gray-600 dark:text-gray-400 mb-8">
+          {entry.data.description}
+        </p>
+      )
+    }
 
     <div class="content">
       <Content />
@@ -89,7 +93,7 @@ const readingTime = calculateReadingTime(entry.body);
   }
 
   .content a {
-    color: #ffd700;
+    color: #eb8317;
     text-decoration: underline;
   }
 
@@ -102,7 +106,8 @@ const readingTime = calculateReadingTime(entry.body);
     font-size: 0.875rem;
   }
 
-  .content ul, .content ol {
+  .content ul,
+  .content ol {
     margin: 1.5rem 0;
     padding-left: 2rem;
   }

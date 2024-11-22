@@ -4,19 +4,19 @@ import { getCollection } from "astro:content";
 import { calculateReadingTime } from "../utils/calculateReadingTime";
 
 const posts = await getCollection("posts");
-const sortedPosts = posts.map(post => ({
-  ...post,
-  readingTime: calculateReadingTime(post.body)
-})).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const sortedPosts = posts
+  .map((post) => ({
+    ...post,
+    readingTime: calculateReadingTime(post.body),
+  }))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <Layout title="Posts | Ferrel John Fernando">
   <div class="max-w-3xl mx-auto">
     <h1 class="text-4xl font-bold mb-8">Posts</h1>
 
-    <div class="space-y-8">
+    <div class="grid gap-8">
       {
         sortedPosts.map((post) => (
           <a href={`/posts/${post.slug}`}>

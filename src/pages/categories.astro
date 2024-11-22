@@ -10,9 +10,9 @@ const postsByCategory = categories.map((category) => ({
   name: category,
   posts: posts
     .filter((post) => post.data.category === category)
-    .map(post => ({
+    .map((post) => ({
       ...post,
-      readingTime: calculateReadingTime(post.body)
+      readingTime: calculateReadingTime(post.body),
     })),
 }));
 ---
@@ -21,12 +21,12 @@ const postsByCategory = categories.map((category) => ({
   <div class="max-w-3xl mx-auto">
     <h1 class="text-4xl font-bold mb-8">Categories</h1>
 
-    <div class="space-y-12">
+    <div class="space-y-16">
       {
         postsByCategory.map(({ name, posts }) => (
           <section>
-            <h2 class="text-2xl font-bold mb-4">{name}</h2>
-            <div class="space-y-4">
+            <h2 class="text-2xl font-bold mb-6">{name}</h2>
+            <div class="grid gap-6">
               {posts.map((post) => (
                 <a href={`/posts/${post.slug}`}>
                   <article class="bg-card-light dark:bg-card-dark p-6 rounded-lg hover:ring-2 hover:ring-primary-light/60 dark:hover:ring-primary-dark/60 transition">
