@@ -8,6 +8,7 @@ const postsCollection = defineCollection({
     pubDate: z.date(),
     author: z.string().default("Anonymous"),
     image: z.string().optional(),
+    headerImage: z.string().optional(),
     category: z.string(),
     series: z.string().optional(),
   }),
