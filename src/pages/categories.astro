@@ -1,13 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { calculateReadingTime } from "../utils/calculateReadingTime";
 
 const posts = await getCollection("posts");
 const categories = [...new Set(posts.map((post) => post.data.category))];
 
 const postsByCategory = categories.map((category) => ({
   name: category,
-  posts: posts.filter((post) => post.data.category === category),
+  posts: posts
+    .filter((post) => post.data.category === category)
+    .map(post => ({
+      ...post,
+      readingTime: calculateReadingTime(post.body)
+    })),
 }));
 ---
 
@@ -25,13 +31,17 @@ const postsByCategory = categories.map((category) => ({
                 <a href={`/posts/${post.slug}`}>
                   <article class="bg-card-light dark:bg-card-dark p-6 rounded-lg hover:ring-2 hover:ring-primary-light/60 dark:hover:ring-primary-dark/60 transition">
                     <h3 class="text-2xl font-bold mb-2">{post.data.title}</h3>
-                    <time class="text-gray-600 dark:text-primary-dark text-sm">
-                      {post.data.pubDate.toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </time>
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-primary-dark text-sm">
+                      <time>
+                        {post.data.pubDate.toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </time>
+                      <span>•</span>
+                      <span>{post.readingTime} min read</span>
+                    </div>
                   </article>
                 </a>
               ))}

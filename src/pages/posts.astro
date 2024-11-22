@@ -1,9 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { calculateReadingTime } from "../utils/calculateReadingTime";
 
 const posts = await getCollection("posts");
-const sortedPosts = posts.sort(
+const sortedPosts = posts.map(post => ({
+  ...post,
+  readingTime: calculateReadingTime(post.body)
+})).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
@@ -28,6 +32,7 @@ const sortedPosts = posts.sort(
                 </time>
                 <span>• {post.data.category}</span>
                 {post.data.series && <span>• Series: {post.data.series}</span>}
+                <span>• {post.readingTime} min read</span>
               </div>
               <p class="text-base">{post.data.description}</p>
             </article>
