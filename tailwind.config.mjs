@@ -28,4 +28,6 @@ export default {
       },
     },
     plugins: [],
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
   }
