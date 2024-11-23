@@ -28,6 +28,8 @@ const readingTime = calculateReadingTime(entry.body);
             width={800}
             height={400}
             class="w-full h-[400px] object-cover rounded-lg"
+            format="webp"
+            loading="lazy"
           />
         </div>
       )
@@ -40,6 +42,8 @@ const readingTime = calculateReadingTime(entry.body);
         width={48}
         height={48}
         class="w-12 h-12 rounded-full object-cover"
+        format="webp"
+        loading="lazy"
       />
       <div>
         <div class="font-medium">{entry.data.author}</div>

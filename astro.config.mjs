@@ -12,5 +12,30 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap(),
+    (await import('@playform/compress')).default({
+      CSS: true,
+      HTML: true,
+      Image: true,
+      JavaScript: true,
+      SVG: true,
+    }),
   ],
+  vite: {
+    build: {
+      cssCodeSplit: true,
+      chunkSizeWarningLimit: 500,
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          },
+        },
+      },
+    },
+    ssr: {
+      noExternal: ['@astrojs/*'],
+    },
+  },
 });

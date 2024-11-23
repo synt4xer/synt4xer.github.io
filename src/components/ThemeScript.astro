@@ -17,9 +17,9 @@
     localStorage.setItem("theme", theme);
   }
 
-  setTheme(getThemePreference());
+  document.addEventListener("astro:after-swap", () => {
+    setTheme(getThemePreference());
 
-  window.addEventListener("load", () => {
     const themeToggle = document.getElementById("theme-toggle");
     if (themeToggle) {
       themeToggle.addEventListener("click", () => {
