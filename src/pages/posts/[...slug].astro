@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import { calculateReadingTime } from "../../utils/calculateReadingTime";
 
@@ -21,9 +22,11 @@ const readingTime = calculateReadingTime(entry.body);
     {
       entry.data.headerImage && (
         <div class="mb-8">
-          <img
+          <Image
             src={entry.data.headerImage}
             alt={entry.data.title}
+            width={800}
+            height={400}
             class="w-full h-[400px] object-cover rounded-lg"
           />
         </div>
@@ -31,9 +34,11 @@ const readingTime = calculateReadingTime(entry.body);
     }
 
     <div class="flex items-center gap-4 mb-6">
-      <img
+      <Image
         src="/images/profile.jpg"
         alt={entry.data.author}
+        width={48}
+        height={48}
         class="w-12 h-12 rounded-full object-cover"
       />
       <div>

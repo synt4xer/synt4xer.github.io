@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SocialIcon from "../components/SocialIcon.astro";
+import { Image } from "astro:assets";
 
 const socialLinks = [
   { platform: "github", url: "https://github.com/synt4xer" },
@@ -14,9 +15,11 @@ const socialLinks = [
 <Layout title="Home | Ferrel John Fernando">
   <div class="max-w-2xl mx-auto text-center">
     <div class="mb-8">
-      <img
+      <Image
         src="/images/profile.jpg"
         alt="Ferrel John Fernando"
+        width={160}
+        height={160}
         class="w-40 h-40 rounded-full mx-auto mb-4 object-cover"
       />
       <h1 class="text-3xl font-bold mb-2">Ferrel John Fernando</h1>
