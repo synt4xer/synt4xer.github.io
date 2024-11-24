@@ -5,14 +5,14 @@ pubDate: 2021-04-23
 author: "Ferrel John Fernando"
 category: "Programming"
 series: "NestJS"
-image: "/images/posts/nestjs-logo.webp"
+image: "/images/posts/1/logo.webp"
 ---
 
 NestJS is one of many frameworks for Node.js. In this post, I'll share what I'm currently learning about it and walk through setting up your first NestJS project.
 
 ## About NestJS
 
-![NestJS Logo](/images/posts/nestjs-logo.webp)
+![NestJS Logo](/images/posts/1/logo.webp)
 
 > Nest (NestJS) is a framework for building efficient, scalable [Node.js](https://nodejs.org/) server-side applications.
 
@@ -42,11 +42,11 @@ $ nest new my-first-nestjs-app
 
 There will be some question “which package manager would you love to use”. In this project, I choose Yarn.
 
-![Choosing package manager](/images/posts/nestjs-choose-package-manager.webp)
+![Choosing package manager](/images/posts/1/choose-package-manager.webp)
 
 After generating project is done, you can open the project using any Text Editor or IDE. Your project structure will look like:
 
-![NestJS Project Structure](/images/posts/nestjs-project-structure.webp)
+![NestJS Project Structure](/images/posts/1/project-structure.webp)
 
 ## Run the project
 
@@ -54,6 +54,6 @@ To run the project, open your terminal to project directory (this is go to defau
 
 After that, open your browser at [http://localhost:3000/](http://localhost:3000/)
 
-![Result](/images/posts/nestjs-hello-world.webp)
+![Result](/images/posts/1/hello-world.webp)
 
 I hope you find this post helpful. We will continue to learn more about NestJS in the next post.
