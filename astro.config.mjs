@@ -5,6 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://synt4xer.github.io',
+  base: '/',
+  trailingSlash: 'ignore',
   output: 'static',
   base: '/',
   trailingSlash: 'never',
