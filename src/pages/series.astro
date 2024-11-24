@@ -31,7 +31,7 @@ const postsBySeries = series.map((seriesName) => ({
             <h2 class="text-2xl font-bold mb-4">{name}</h2>
             <div class="grid gap-6">
               {posts.map((post, index) => (
-                <a href={`/posts/${post.slug}`}>
+                <a href={`/posts/${post.slug}/`}>
                   <article class="bg-card-light dark:bg-card-dark p-6 rounded-lg hover:ring-2 hover:ring-primary-light/60 dark:hover:ring-primary-dark/60 transition">
                     <div class="flex items-center gap-4">
                       <span class="text-2xl font-bold text-gray-400 dark:text-primary-dark/40">

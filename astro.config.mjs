@@ -8,8 +8,6 @@ export default defineConfig({
   base: '/',
   trailingSlash: 'ignore',
   output: 'static',
-  base: '/',
-  trailingSlash: 'never',
   build: {
     minify: true,
   },
