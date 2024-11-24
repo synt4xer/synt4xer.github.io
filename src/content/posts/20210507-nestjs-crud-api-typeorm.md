@@ -14,7 +14,7 @@ In this post I want to show you how I set up my [NestJS](https://nestjs.com) pro
 
 ## Prerequisites
 
-I am assuming that you already know how to install a local development environment for Node.js, have PostgreSQL installed, and `@nestjs/cli` installed. If you not installed `@nestjs/cli` yet, you can read [my previous post](https://synt4xer.com/posts/20210423-nestjs-introduction).
+I am assuming that you already know how to install a local development environment for Node.js, have PostgreSQL installed, and `@nestjs/cli` installed. If you not installed `@nestjs/cli` yet, you can read [my previous post](https://synt4xer.github.io/posts/20210423-nestjs-introduction/).
 
 ## Create a NestJS Project
 
