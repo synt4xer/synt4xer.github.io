@@ -110,12 +110,24 @@ const navItems = [
 </header>
 
 <script>
-  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  if (mobileMenuToggle && mobileMenu) {
-    mobileMenuToggle.addEventListener("click", () => {
+  const handleMobileMenuToggle = () => {
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (mobileMenu) {
       mobileMenu.classList.toggle("hidden");
-    });
-  }
+    }
+  };
+
+  // Initial page load
+  document.addEventListener("astro:page-load", () => {
+    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+    mobileMenuToggle?.addEventListener("click", handleMobileMenuToggle);
+  });
+
+  // After view transitions
+  document.addEventListener("astro:after-swap", () => {
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (mobileMenu) {
+      mobileMenu.classList.add("hidden");
+    }
+  });
 </script>
