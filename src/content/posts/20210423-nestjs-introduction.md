@@ -20,9 +20,9 @@ NestJS is one of many frameworks for Node.js. In this post, I'll share what I'm 
 
 Under the hood, NestJS uses HTTP Server frameworks like [Express](https://expressjs.com) (the default) and [Fastify](https://www.fastify.io). While NestJS is built with TypeScript, it still allows you to write code in pure JavaScript. The framework combines elements of:
 
-- OOP (Object Oriented Programming)
-- FP (Functional Programming)
-- FRP (Functional Reactive Programming)
+- • OOP (Object Oriented Programming)
+- • FP (Functional Programming)
+- • FRP (Functional Reactive Programming)
 
 ## Installing the Nest CLI
 
